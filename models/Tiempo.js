@@ -6,7 +6,7 @@ const TiempoSchema = Schema({
 
 
    
-    time:{
+    tiempos:{
         type: Array,
         require:true,
         

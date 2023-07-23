@@ -52,4 +52,23 @@
 
 
 
+},{
+    "creartiempoglobal": "http://localhost:4000/api/tiempos",
+    "enviar": { "tiempos":["tiempo1","tiempo2"] },
+    "enviartmb" : "header de x-token",
+
+
+    "gettiemposglobales":"http://localhost:4000/api/tiempos",
+    "enviarr" : "enviar header de x-token",
+    
+
+    "actualizartiemposglobales":"http://localhost:4000/api/tiempos/:id",
+    "enviarrr": { "tiempos":["tiempo2","tiempo3"]},
+    "enviarrrr" : "enviar header con x-token",
+
+
+    "deletetiempoglobales": "http://localhost:4000/api/tiempos/:id",
+    "tabenviar":    "enviar header con x-token"
+
+
 }]

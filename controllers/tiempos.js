@@ -1,5 +1,5 @@
 const {response} = require('express')
-const Tiempo = require('../models/Evento')
+const Tiempo = require('../models/Tiempo')
 
 
 
@@ -32,6 +32,7 @@ console.log(req.body);
 
 const  tiempo = new Tiempo (req.body)
 
+ 
 try{
 
     tiempo.user=req.uid
@@ -40,7 +41,7 @@ const eventoguardado = await tiempo.save()
 res.status(201).json({
 
     ok:true,
-    eventoguardado,
+ eventoguardado
     
 
 })
@@ -71,8 +72,8 @@ res.status(201).json({
 
 const actualizarTiempos = async (req,res=response ) =>{
     const tiempoId = req.params.id
-    const {uid}  = req.uid
-    const {tiempos,user} = req.body
+  
+    const {tiempos} = req.body
 try{
 const tiempo =await Tiempo.findById(tiempoId)
 if(!tiempo){
@@ -92,17 +93,19 @@ if(!tiempo){
 //     })
 // }
 const nuevoTiempo = {
-    tiempos,
-    user
+     tiempos,
+    user:req.uid
 }
 
-const eventoActualizado = await Tiempo.findByIdAndUpdate(tiempoId,nuevoTiempo)
+const tiemposActualizados = await Tiempo.findByIdAndUpdate(tiempoId,nuevoTiempo)
 
 res.json({
 
     ok:true,
     msg:'actualizarTiempo',
-    evento:eventoActualizado
+    tiemposActualizados,
+    msg:"nuevo tiempo",
+    tiempoooo:nuevoTiempo
 })
 
 }catch(error){
