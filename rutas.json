@@ -1,0 +1,55 @@
+[{
+
+
+    
+"rutas de crear evento" : "http://localhost:4000/api/events/",
+"recibe al crear " : { "tiempos":["tiempo5","tiempo6"]},
+"recibe al crear" : "un header con un x-token",
+
+
+
+"geteventosruta": "http://localhost:4000/api/events",
+"geteventos": "recibe header de x-token ",
+
+
+
+"Putevento": "http://localhost:4000/api/events/:id",
+"recibepuevento" : "un header x-token",
+"recibe al modificar " : { "tiempos":["tiempo5","tiempo6"]},
+
+
+
+"deleteevneto":"http://localhost:4000/api/events/:id",
+"recibe al borrar": "un header x-token"
+
+
+    
+
+    
+  
+
+
+}
+,
+{
+    
+    "rutacrearunusuario":"http://localhost:4000/api/auth/new",
+    "recibe-crear-usuario" : {"name":"David", "password": "passw"},
+
+
+    "getloginusuario":"http://localhost:4000/api/auth/",
+    "enviar-datos-a-revisar": { "name":"David", "password": "passw" },
+
+
+
+    "getrenew-token": "http://localhost:4000/api/auth/renew",
+    "enviar": "x-header con token"
+
+
+
+
+
+
+
+
+}]
