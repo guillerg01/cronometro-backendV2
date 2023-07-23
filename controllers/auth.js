@@ -148,6 +148,17 @@ const uid = req.uid
 const name = req.name
 try{
 const token = await generarjwt(uid,name)
+
+
+
+res.json({
+  ok: true,
+  msg: "renew",
+  uid,
+  name,
+  token
+});
+
 }catch(error){
   res.status(500).json({
 
@@ -156,13 +167,6 @@ const token = await generarjwt(uid,name)
   })
 }
 
-  res.json({
-    ok: true,
-    msg: "renew",
-    uid,
-    name,
-    token
-  });
 };
 
 
