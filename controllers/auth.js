@@ -16,7 +16,7 @@ const crearUsuario = async (req, res = response) => {
   console.log(req.body);
 
 // desestructurar la req
-  const {name,password,tiempo} = req.body
+  const {name,password} = req.body
 
 
   try{ 
@@ -176,17 +176,9 @@ res.json({
 
 
 
-const obtenerusuarios = (req, res = response) => {
-  console.log("se requiere /obtener usuarios");
-  res.json({
-    ok: true,
-    msg: "obtusers",
-  });
-};
-
 module.exports = {
   crearUsuario,
   loginusuario,
-   obtenerusuarios,
+
    renew
 };

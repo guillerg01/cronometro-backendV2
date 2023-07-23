@@ -13,11 +13,6 @@ const UsuarioSchema = Schema({
         require:true,
         
 
-    },
-    tiempo:{
-
-        type:String,
-        require:true
     }
 
 })

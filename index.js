@@ -23,8 +23,9 @@ dbConnection();
 //lectura y parseo del boddy
 app.use(express.json())
 
-//directorio de auth
+//RUTAS
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/events",require("./routes/events"))
 
 //escuchar peticiones
 app.listen(process.env.PORT, () => {

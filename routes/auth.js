@@ -24,7 +24,7 @@ router.post(
 
 router.post("/", loginusuario);
 
-router.get("/tiempo", obtenerusuarios);
+
 
 router.get("/renew", validarjst ,renew);
 
