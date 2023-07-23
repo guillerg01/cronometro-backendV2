@@ -7,6 +7,78 @@
     <title>server cronometro</title>
 </head>
 <body>
-    <h1>Bloqueado</h1>
+    <h1>Rutas</h1>
+    <p>
+        
+
+
+    
+"rutas de crear evento" : "http://localhost:4000/api/events/",
+
+<br>
+"recibe al crear " : { "tiempos":["tiempo5","tiempo6"]},
+<br>
+"recibe al crear" : "un header con un x-token",
+<br><br>
+
+
+
+"geteventosruta": "http://localhost:4000/api/events",<br>
+"geteventos": "recibe header de x-token ",<br><br>
+
+
+
+"Putevento": "http://localhost:4000/api/events/:id",<br>
+"recibepuevento" : "un header x-token",<br>
+"recibe al modificar " : { "tiempos":["tiempo5","tiempo6"]},<br>
+
+<br>
+
+"deleteevneto":"http://localhost:4000/api/events/:id",<br>
+"recibe al borrar": "un header x-token"<br><br><br><br>
+
+
+    
+
+    
+  
+
+
+    
+    "rutacrearunusuario":"http://localhost:4000/api/auth/new",<br>
+    "recibe-crear-usuario" : {"name":"David", "password": "passw"},<br>
+    <br>
+
+    "getloginusuario":"http://localhost:4000/api/auth/",<br>
+    "enviar-datos-a-revisar": { "name":"David", "password": "passw" },<br><br>
+
+
+
+    "getrenew-token": "http://localhost:4000/api/auth/renew",<br>
+    "enviar": "x-header con token"<br>
+
+
+    <br><br><br><br>
+
+
+
+    "creartiempoglobal": "http://localhost:4000/api/tiempos",<br>
+    "enviar": { "tiempos":["tiempo1","tiempo2"] },<br>
+    "enviartmb" : "header de x-token",<br><br>
+
+
+    "gettiemposglobales":"http://localhost:4000/api/tiempos",<br>
+    "enviarr" : "enviar header de x-token",<br><br>
+    
+
+    "actualizartiemposglobales":"http://localhost:4000/api/tiempos/:id",<br>
+    "enviarrr": { "tiempos":["tiempo2","tiempo3"]},<br>
+    "enviarrrr" : "enviar header con x-token",<br><br>
+
+
+    "deletetiempoglobales": "http://localhost:4000/api/tiempos/:id",<br>
+    "tabenviar":    "enviar header con x-token"<br>
+
+    </p>
 </body>
 </html>
