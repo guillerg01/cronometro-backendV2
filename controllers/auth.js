@@ -4,6 +4,13 @@ const Usuario = require('../models/Usuario')
 const bcrypt = require('bcryptjs')
 const {generarjwt} = require('../helpers/jwt')
 
+
+
+
+
+
+
+
 const crearUsuario = async (req, res = response) => {
   console.log("crear usuarios ");
   console.log(req.body);
@@ -135,6 +142,33 @@ const token = await generarjwt(usuario.id, usuario.name)
 
 
 
+const renew = async (req, res = response) => {
+
+const uid = req.uid
+const name = req.name
+try{
+const token = await generarjwt(uid,name)
+}catch(error){
+  res.status(500).json({
+
+    ok:false,
+    msg:'hable con el admin'
+  })
+}
+
+  res.json({
+    ok: true,
+    msg: "renew",
+    uid,
+    name,
+    token
+  });
+};
+
+
+
+
+
 
 
 
@@ -150,4 +184,5 @@ module.exports = {
   crearUsuario,
   loginusuario,
    obtenerusuarios,
+   renew
 };
