@@ -13,7 +13,7 @@ const {validarCampos} = require('../middlewares/validar-campos')
 router.use(validarjst)
 
 
-router.get('/',getEventos)
+router.get('/:id',getEventos)
 
 
 
