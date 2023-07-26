@@ -9,12 +9,14 @@ const Tiempo = require('../models/Tiempo')
 const getTiempos = async (req,res=response ) =>{
 
     const tiempos = await Tiempo.find().populate('user','name')
-
+    const userid = req.params.id
+    const busqueda = await Tiempo.find({user:userid})
 
     res.json({
 
         ok:true,
-         tiempos
+         tiempos,
+         busqueda
     })
 
 }
