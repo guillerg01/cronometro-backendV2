@@ -16,7 +16,9 @@ const TiempoSchema = Schema({
 
         type:Schema.Types.ObjectId,
         ref:'Usuario',
-        require:true
+        require:true,
+       unique:true
+        
     }
 
 })
