@@ -27,6 +27,7 @@ app.use(express.json())
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events",require("./routes/events"))
 app.use("/api/tiempos",require("./routes/tiempo"))
+app.use("/api/trabajadores",require("./routes/trabajadores"))
 
 //escuchar peticiones
 app.listen(process.env.PORT, () => {
