@@ -60,4 +60,4 @@ EmpleadoSchema.method("toJSON", function () {
   return object;
 });
 
-module.exports = model("Empleado", EmpleadoSchema);
+module.exports = model("Trabajador", EmpleadoSchema);
