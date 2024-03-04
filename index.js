@@ -24,6 +24,7 @@ app.use("/api/events", require("./routes/events"));
 app.use("/api/tiempos", require("./routes/tiempo"));
 app.use("/api/trabajadores", require("./routes/trabajadores"));
 app.use("/api/empleados", require("./routes/empleados"));
+app.use("/api/paquetes", require("./routes/paquete"));
 
 //escuchar peticiones
 app.listen(process.env.PORT, () => {
