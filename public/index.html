@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="./style.css">
     <title>server cronometro</title>
 </head>
+<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
 <body>
     <h1>Rutas</h1>
     <p>
@@ -80,5 +94,191 @@
     "tabenviar":    "enviar header con x-token"<br>
 
     </p>
+    <table>
+    <tr>
+        <th>Endpoint</th>
+        <th>Método</th>
+        <th>Parámetros</th>
+        <th>Solicitud</th>
+        <th>Respuesta</th>
+    </tr>
+    <tr>
+        <td>/login</td>
+        <td>POST</td>
+        <td>name, password</td>
+        <td>
+            <pre>{
+ "name": "nombreUsuario",
+ "password": "contraseña"
+}</pre>
+        </td>
+        <td>
+            <pre>{
+ "ok": true,
+ "msg": "Inicio de sesión exitoso",
+ "empleado": {...},
+ "token": "tokenJWT"
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>GET</td>
+        <td>-</td>
+        <td>-</td>
+        <td>
+            <pre>{
+ "ok": true,
+ "empleados": [...]
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>POST</td>
+        <td>ci, nombre, apellido, telefono, foto, ocupacion, descripcion, direccion, rol, name, password</td>
+        <td>
+            <pre>{
+ "ci": 123456,
+ "nombre": "Juan",
+ "apellido": "Perez",
+ "telefono": "555-5555",
+ "foto": "urlFoto",
+ "ocupacion": "Ingeniero",
+ "descripcion": "Descripción",
+ "direccion": {...},
+ "rol": "Admin",
+ "name": "juanPerez",
+ "password": "contraseña"
+}</pre>
+        </td>
+        <td>
+            <pre>{
+ "ok": true,
+ "msg": "Empleado creado",
+ "empleado": {...}
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/:id</td>
+        <td>PUT</td>
+        <td>id, nombre, ci, direccion, name, docente, categoriaDocente, categoriaCientifica, escolaridad, ocupacion, user</td>
+        <td>
+            <pre>{
+ "nombre": "Juan",
+ "ci": 123456,
+ "direccion": {...},
+ "name": "juanPerez",
+ "docente": true,
+ "categoriaDocente": "Profesor",
+ "categoriaCientifica": "Investigador",
+ "escolaridad": "Doctor",
+ "ocupacion": "Ingeniero",
+ "user": "usuario"
+}</pre>
+        </td>
+        <td>
+            <pre>{
+ "ok": true,
+ "msg": "Empleado actualizado",
+ "empleado": {...}
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/:id</td>
+        <td>DELETE</td>
+        <td>id</td>
+        <td>-</td>
+        <td>
+            <pre>{
+ "ok": true,
+ "msg": "Empleado eliminado",
+ "empleado": {...}
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>GET</td>
+        <td>-</td>
+        <td>-</td>
+        <td>
+            <pre>{
+ "ok": true,
+ "paquetes": [...]
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/:id</td>
+        <td>GET</td>
+        <td>id</td>
+        <td>-</td>
+        <td>
+            <pre>{
+ "ok": true,
+ "paquetes": [...]
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>POST</td>
+        <td>paquete, nombre, peso, direccionA, direccionB, estado</td>
+        <td>
+            <pre>{
+ "paquete": "123456",
+ "nombre": "Paquete Ejemplo",
+ "peso": 5,
+ "direccionA": "Dirección A",
+ "direccionB": "Dirección B",
+ "estado": "Enviado"
+}</pre>
+        </td>
+        <td>
+            <pre>{
+ "ok": true,
+ "paqueteGuardado": {...}
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/:id</td>
+        <td>PUT</td>
+        <td>id, paquete, nombre, peso, direccionA, direccionB, estado</td>
+        <td>
+            <pre>{
+ "paquete": "123456",
+ "nombre": "Paquete Actualizado",
+ "peso": 6,
+ "direccionA": "Dirección A Actualizada",
+ "direccionB": "Dirección B Actualizada",
+ "estado": "Entregado"
+}</pre>
+        </td>
+        <td>
+            <pre>{
+ "ok": true,
+ "msg": "actualizarPaquete",
+ "paquete": {...}
+}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>/:id</td>
+        <td>DELETE</td>
+        <td>id</td>
+        <td>-</td>
+        <td>
+            <pre>{
+ "ok": true,
+ "msg": "eliminarPaquete",
+ "paquete": {...}
+}</pre>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
