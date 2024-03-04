@@ -1,4 +1,5 @@
 const Empleado = require("../models/Empleado");
+const bcrypt = require("bcryptjs");
 
 const getEmpleados = async (req, res = response) => {
   const empleados = await Empleado.find();
