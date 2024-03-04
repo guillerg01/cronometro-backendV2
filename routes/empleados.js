@@ -11,8 +11,6 @@ const {
 const { check } = require("express-validator");
 const { validarCampos } = require("../middlewares/validar-campos");
 
-router.use(validarjst);
-
 router.get("/", getEmpleados);
 
 router.post("/", crearEmpleado);

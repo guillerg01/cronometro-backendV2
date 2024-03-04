@@ -9,9 +9,9 @@ const getEmpleados = async (req, res = response) => {
 };
 
 const loginEmpleado = async (req, res) => {
-  const { ci, password } = req.body;
+  const { name, password } = req.body;
   try {
-    const empleado = await Empleado.findOne({ ci });
+    const empleado = await Empleado.findOne({ name });
     if (!empleado) {
       return res.status(404).json({
         ok: false,
