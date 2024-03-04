@@ -11,12 +11,12 @@ const {
 const { check } = require("express-validator");
 const { validarCampos } = require("../middlewares/validar-campos");
 
+router.post("/login", loginEmpleado);
 router.use(validarjst);
 
 router.get("/", getEmpleados);
 
 router.post("/", crearEmpleado);
-router.post("/login", loginEmpleado);
 
 router.put("/:id", actualizarEmpleado);
 

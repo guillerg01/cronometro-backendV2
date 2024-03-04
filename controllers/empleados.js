@@ -1,5 +1,6 @@
 const Empleado = require("../models/Empleado");
 const bcrypt = require("bcryptjs");
+const { generarjwt } = require("../helpers/jwt");
 
 const getEmpleados = async (req, res = response) => {
   const empleados = await Empleado.find();
@@ -26,11 +27,14 @@ const loginEmpleado = async (req, res) => {
         msg: "Contraseña incorrecta",
       });
     }
+    const token = await generarjwt(empleado.id, empleado.name);
+
     // Aquí puedes manejar la creación de la sesión o token de autenticación
     res.json({
       ok: true,
       msg: "Inicio de sesión exitoso",
       empleado,
+      token,
     });
   } catch (error) {
     console.log(error);
