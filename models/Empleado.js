@@ -38,7 +38,16 @@ const EmpleadoSchema = Schema({
   },
   foto: {
     type: String,
-    required: true,
+    required: false,
+  },
+  name: {
+    type: String,
+    require: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    require: true,
   },
   ocupacion: {
     type: String,
@@ -46,18 +55,16 @@ const EmpleadoSchema = Schema({
   },
   descripcion: {
     type: String,
-    required: true,
+    required: false,
   },
   direccion: {
     type: DireccionSchema,
     required: true,
   },
-});
-
-EmpleadoSchema.method("toJSON", function () {
-  const { __v, _id, ...object } = this.toObject();
-  object.id = _id;
-  return object;
+  rol: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = model("Empleado", EmpleadoSchema);
